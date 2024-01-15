@@ -19,8 +19,7 @@ public class Cli {
         System.out.println("3 - Magic Calc");
         System.out.println("0 - Exit");
         Scanner input = new Scanner(System.in);
-        int result = input.nextInt();
-        return result;
+        return input.nextInt();
     }
 }
 
