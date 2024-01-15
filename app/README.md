@@ -6,3 +6,9 @@
 ```bash
 make run-dist
 ```
+
+###Even game Demo
+[![asciicast](https://asciinema.org/a/hqvFJEpObHBoOj9QdFsqH2zTp.svg)](https://asciinema.org/a/hqvFJEpObHBoOj9QdFsqH2zTp)
+
+###Magic Calc game Demo
+[![asciicast](https://asciinema.org/a/Ir33lbAz8RnOgkQbM8EU5sElU.svg)](https://asciinema.org/a/Ir33lbAz8RnOgkQbM8EU5sElU)
