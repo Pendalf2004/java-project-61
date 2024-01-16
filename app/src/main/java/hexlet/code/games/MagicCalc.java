@@ -5,7 +5,7 @@ import hexlet.code.*;
 import java.util.Scanner;
 
 public class MagicCalc {
-    public static boolean magicCalcRound() {
+    public static boolean round() {
         System.out.println("What is the result of the expression?");
         System.out.print("Question: ");
         int a = Math.toIntExact(Math.round(Math.random() * 20));

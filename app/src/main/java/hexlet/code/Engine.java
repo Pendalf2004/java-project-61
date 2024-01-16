@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
+
 public class Engine {
 
     public static void face() {
@@ -11,22 +12,37 @@ public class Engine {
                 break;
             case 2:
                 Cli.hello();
-                while (Even.evenRound() & correctAnswers < 3) {
+                while (Even.round() & correctAnswers < 3) {
                     correctAnswers += 1;
                 }
-                face();
+                if (correctAnswers == 3) {
+                    System.out.println("Congratulations, " + Cli.playerName + "!");
+                }
+                break;
             case 3:
                 Cli.hello();
-                while (MagicCalc.magicCalcRound() & correctAnswers < 3) {
+                while (MagicCalc.round() & correctAnswers < 3) {
                     correctAnswers += 1;
                 }
-                face();
-            case 0:
+                if (correctAnswers == 3) {
+                    System.out.println("Congratulations, " + Cli.playerName + "!");
+                }
                 break;
+            case 4:
+                Cli.hello();
+                while (GCD.round() & correctAnswers < 3) {
+                    correctAnswers += 1;
+                }
+                if (correctAnswers == 3) {
+                    System.out.println("Congratulations, " + Cli.playerName + "!");
+                }
+                break;
+            case 0:
+                return;
             default:
-                face();
+                return;
         }
-        return;
+        face();
     }
 
 

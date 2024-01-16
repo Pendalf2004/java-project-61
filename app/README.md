@@ -10,5 +10,8 @@ make run-dist
 ###Even game Demo
 [![asciicast](https://asciinema.org/a/hqvFJEpObHBoOj9QdFsqH2zTp.svg)](https://asciinema.org/a/hqvFJEpObHBoOj9QdFsqH2zTp)
 
-###Magic Calc game Demo
+###Calc game Demo
 [![asciicast](https://asciinema.org/a/Ir33lbAz8RnOgkQbM8EU5sElU.svg)](https://asciinema.org/a/Ir33lbAz8RnOgkQbM8EU5sElU)
+
+###GSD game Demo
+[![asciicast](https://asciinema.org/a/E8GLCpDKAwimKjr7e1CEsleW8.svg)](https://asciinema.org/a/E8GLCpDKAwimKjr7e1CEsleW8)

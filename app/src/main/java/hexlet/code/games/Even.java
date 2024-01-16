@@ -4,7 +4,7 @@ import java.util.Scanner;
 import hexlet.code.*;
 
 public class Even {
-    public static boolean evenRound() {
+    public static boolean round() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         System.out.print("Question: ");
         int a = Math.toIntExact(Math.round(Math.random() * 99));
