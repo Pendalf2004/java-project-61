@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Cli;
+
 import java.util.Scanner;
 
 public class GCD {
@@ -17,6 +19,7 @@ public class GCD {
             return true;
         }
         System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + gsd(a, b) + "'.");
+        System.out.println("Let's try again, " + Cli.playerName + "!");
         return false;
     }
 
