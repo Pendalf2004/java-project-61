@@ -2,7 +2,8 @@ package hexlet.code;
 
 public class App {
     public static void main(String[] args) {
-        Cli.hello();
+        //System.out.println("Welcome to the Brain Games!");
+        //Cli.hello();
         Engine.face();
         return;
     }

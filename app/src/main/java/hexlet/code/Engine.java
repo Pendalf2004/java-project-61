@@ -81,7 +81,7 @@ public class Engine {
             default:
                 return;
         }
-        face();
+        //face();
     }
 
 
