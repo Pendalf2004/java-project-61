@@ -1,7 +1,6 @@
 package hexlet.code.games;
-
 import java.util.Scanner;
-import hexlet.code.*;
+import hexlet.code.Cli;
 
 public class Even {
     public static boolean round() {
@@ -18,6 +17,11 @@ public class Even {
         } else if (answer.equalsIgnoreCase("no") & (a % 2 != 0)) {
             System.out.println("Correct!");
             return true;
+        }
+        if (answer.equalsIgnoreCase("no")) {
+            System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+        } else {
+            System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
         }
         System.out.println("Let's try again, " + Cli.playerName + "!");
         return false;

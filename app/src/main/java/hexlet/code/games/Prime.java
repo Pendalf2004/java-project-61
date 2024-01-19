@@ -1,7 +1,5 @@
 package hexlet.code.games;
-
 import hexlet.code.Cli;
-
 import java.util.Scanner;
 
 public class Prime {
@@ -27,6 +25,11 @@ public class Prime {
         if (!isPrime & answer.equalsIgnoreCase("no")) {
             System.out.println("Correct!");
             return true;
+        }
+        if (answer.equalsIgnoreCase("no")) {
+            System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+        } else {
+            System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
         }
         System.out.println("Let's try again, " + Cli.playerName + "!");
         return false;
