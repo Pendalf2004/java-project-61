@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class GCD {
     public static boolean round() {
         System.out.println("Find the greatest common divisor of given numbers.");
-        System.out.println("Question: ");
+        System.out.print("Question: ");
         int a = (int) (Math.random() * 49 + 1);
         int b = (int) (Math.random() * 49 + 1);
         System.out.println(a + " " + b);
