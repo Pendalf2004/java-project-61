@@ -62,6 +62,19 @@ public class Engine {
                     System.out.println("Congratulations, " + Cli.playerName + "! ");
                 }
                 break;
+            case 6:
+                Cli.hello();
+                while (correctAnswers < 3) {
+                    if (Prime.round()) {
+                        correctAnswers++;
+                    } else {
+                        break;
+                    }
+                }
+                if (correctAnswers == 3) {
+                    System.out.println("Congratulations, " + Cli.playerName + "! ");
+                }
+                break;
             case 0:
                 return;
             default:
