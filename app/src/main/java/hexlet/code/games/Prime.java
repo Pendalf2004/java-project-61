@@ -8,7 +8,8 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         System.out.print("Question: ");
         boolean isPrime = true;
-        int a = Math.toIntExact(Math.round(Math.random() * 99));
+        int maxNum = 99;
+        int a = Math.toIntExact(Math.round(Math.random() * maxNum));
         System.out.println(a);
         System.out.print("Your answer: ");
         Scanner input = new Scanner(System.in);
@@ -31,7 +32,7 @@ public class Prime {
         } else {
             System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
         }
-        System.out.println("Let's try again, " + Cli.playerName + "!");
+        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
         return false;
     }
 }

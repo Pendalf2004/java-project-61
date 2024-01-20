@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+import hexlet.code.games.GCD;
+import hexlet.code.games.MagicCalc;
 
 public class Engine {
 
@@ -21,7 +25,7 @@ public class Engine {
                     }
                 }
                 if (correctAnswers == maxRounds) {
-                    System.out.println("Congratulations, " + Cli.playerName + "! ");
+                    System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
                 }
                 break;
             case 3:
@@ -34,7 +38,7 @@ public class Engine {
                     }
                 }
                 if (correctAnswers == maxRounds) {
-                    System.out.println("Congratulations, " + Cli.playerName + "! ");
+                    System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
                 }
                 break;
             case 4:
@@ -47,7 +51,7 @@ public class Engine {
                     }
                 }
                 if (correctAnswers == maxRounds) {
-                    System.out.println("Congratulations, " + Cli.playerName + "! ");
+                    System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
                 }
                 break;
             case 5:
@@ -60,7 +64,7 @@ public class Engine {
                     }
                 }
                 if (correctAnswers == maxRounds) {
-                    System.out.println("Congratulations, " + Cli.playerName + "! ");
+                    System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
                 }
                 break;
             case 6:
@@ -73,7 +77,7 @@ public class Engine {
                     }
                 }
                 if (correctAnswers == maxRounds) {
-                    System.out.println("Congratulations, " + Cli.playerName + "! ");
+                    System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
                 }
                 break;
             case 0:

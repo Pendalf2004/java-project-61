@@ -8,8 +8,9 @@ public class GCD {
     public static boolean round() {
         System.out.println("Find the greatest common divisor of given numbers.");
         System.out.print("Question: ");
-        int a = (int) (Math.random() * 49 + 1);
-        int b = (int) (Math.random() * 49 + 1);
+        int maxNum = 49;
+        int a = (int) (Math.random() * maxNum + 1);
+        int b = (int) (Math.random() * maxNum + 1);
         System.out.println(a + " " + b);
         System.out.print("Your answer: ");
         Scanner input = new Scanner(System.in);
@@ -19,7 +20,7 @@ public class GCD {
             return true;
         }
         System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + gsd(a, b) + "'.");
-        System.out.println("Let's try again, " + Cli.playerName + "!");
+        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
         return false;
     }
 

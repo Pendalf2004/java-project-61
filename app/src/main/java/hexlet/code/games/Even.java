@@ -6,7 +6,8 @@ public class Even {
     public static boolean round() {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         System.out.print("Question: ");
-        int a = Math.toIntExact(Math.round(Math.random() * 99));
+        int maxNum = 99;
+        int a = Math.toIntExact(Math.round(Math.random() * maxNum));
         System.out.println(a);
         System.out.print("Your answer: ");
         Scanner input = new Scanner(System.in);
@@ -23,7 +24,7 @@ public class Even {
         } else {
             System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
         }
-        System.out.println("Let's try again, " + Cli.playerName + "!");
+        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
         return false;
     }
 }

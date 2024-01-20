@@ -7,10 +7,14 @@ import java.util.Scanner;
 public class Progression {
 
     public static boolean round() {
-        int inc = (int) Math.ceil(Math.random() * 9 + 1);
-        int progrLength = (int) Math.ceil(Math.random() * 5 + 5);
+        int maxIncStep = 9;
+        int step = (int) Math.ceil(Math.random() * maxIncStep + 1);
+        int prograssionAddedSteps = 5;
+        int progressionMinSteps = 5;
+        int progrLength = (int) Math.ceil(Math.random() * prograssionAddedSteps + progressionMinSteps);
         int[] progression = new int[progrLength];
-        progression[0] = (int) Math.ceil(Math.random() * 30);
+        int maxNum = 30;
+        progression[0] = (int) Math.ceil(Math.random() * maxNum);
         int absElem = (int) Math.floor(Math.random() * (progrLength - 1));
         System.out.println("What number is missing in the progression?");
         System.out.print("Question: ");
@@ -20,7 +24,7 @@ public class Progression {
             System.out.print("..");
         }
         for (int i = 1; i < progrLength; i++) {
-            progression[i] = progression[i - 1] + inc;
+            progression[i] = progression[i - 1] + step;
             if (i == absElem) {
                 System.out.print(" ..");
             } else {
@@ -35,7 +39,7 @@ public class Progression {
             return true;
         }
         System.out.println("'" + answer + "'  is wrong answer ;(. Correct answer was '" + progression[absElem] + "'.");
-        System.out.println("Let's try again, " + Cli.playerName + "!");
+        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
         return false;
 
     }
