@@ -5,13 +5,14 @@ import hexlet.code.Cli;
 import java.util.Scanner;
 
 public class MagicCalc {
+
+    static int maxA = 20;
+    static int maxB = 10;
+    static int mathOp = 3;
     public static boolean round() {
         System.out.println("What is the result of the expression?");
         System.out.print("Question: ");
-        int maxA = 20;
-        int maxB = 10;
-        int mathOp = 3;
-        int a = Math.toIntExact(Math.round(Math.random() * maxA));
+        int a = Math.toIntExact(Math.round(Math.random() * MagicCalc.maxA));
         int b = Math.toIntExact(Math.round(Math.random() * maxB));
         int c = 0;
         double floor = Math.floor(Math.random() * mathOp);
