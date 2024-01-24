@@ -47,6 +47,7 @@ public class Engine {
                         break;
                     }
                 }
+                break;
             case 3:
                 App.hello();
                 while (currentRound < maxRounds) {
@@ -67,6 +68,7 @@ public class Engine {
                         break;
                     }
                 }
+                break;
             case 4:
                 App.hello();
                 while (currentRound < maxRounds) {
@@ -87,6 +89,7 @@ public class Engine {
                         break;
                     }
                 }
+                break;
             case 5:
                 App.hello();
                 while (currentRound < maxRounds) {
@@ -107,6 +110,7 @@ public class Engine {
                         break;
                     }
                 }
+                break;
             case 6:
                 App.hello();
                 while (currentRound < maxRounds) {
@@ -127,11 +131,10 @@ public class Engine {
                         break;
                     }
                 }
+                break;
             case 0:
                 return;
             default:
         }
     }
-
-
 }
