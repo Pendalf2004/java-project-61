@@ -1,40 +1,35 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Scanner;
+import hexlet.code.Engine;
 
 public class MagicCalc {
 
-    static int maxA = 20;
-    static int maxB = 10;
-    static int mathOp = 3;
-    public static boolean round() {
-        System.out.println("What is the result of the expression?");
-        System.out.print("Question: ");
-        int a = Math.toIntExact(Math.round(Math.random() * MagicCalc.maxA));
-        int b = Math.toIntExact(Math.round(Math.random() * maxB));
-        int c = 0;
-        double floor = Math.floor(Math.random() * mathOp);
-        if (floor == 0) {
-            System.out.println(a + " + " + b);
-            c = a + b;
-        } else if (floor == 1) {
-            System.out.println(a + " - " + b);
-            c = a - b;
-        } else if (floor == 2) {
-            System.out.println(a + " * " + b);
-            c = a * b;
-        }
-        System.out.print("Your answer: ");
-        Scanner input = new Scanner(System.in);
-        String answer = input.next();
-        if (answer.equals(String.valueOf(c))) {
-            System.out.println("Correct!");
-            return true;
-        }
-        System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was '" + c + "'.");
-        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
-        return false;
+    private static String task = "What is the result of the expression?";
+    private static String correctAnswer;
+    public static String getTask() {
+        return task;
     }
-}
+
+    public static String getQuestion() {
+        int numOfMathOp = 3;
+        int a = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
+        int b = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
+        int c = 0;
+        double floor = Math.floor(Math.random() * numOfMathOp);
+        if (floor == 0) {
+            correctAnswer = String.valueOf(a + b);
+            return  a + " + " + b;
+        } else if (floor == 1) {
+            correctAnswer = String.valueOf(a - b);
+            return a + " - " + b;
+        } else if (floor == 2) {
+            correctAnswer = String.valueOf(a * b);
+            return a + " * " + b;
+        }
+        return "";
+    }
+
+    public static String getCorrectAnswer() {
+        return correctAnswer;
+    }
+    }

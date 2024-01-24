@@ -1,10 +1,33 @@
 package hexlet.code.games;
-import hexlet.code.Cli;
-import java.util.Scanner;
-
+import hexlet.code.Engine;
 public class Prime {
+    private static String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static String correctAnswer;
+    public static String getTask() {
+        return task;
+    }
 
-    public static boolean round() {
+    public static String getQuestion() {
+        boolean isPrime = true;
+        int a = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
+        for (int i = 2; i < a; i++) {
+            if (a % i == 0) {
+                isPrime = false;
+            }
+        }
+        if (isPrime) {
+            correctAnswer = "yes";
+        } else {
+            correctAnswer = "no";
+        }
+        return String.valueOf(a);
+    }
+
+    public static String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+/*    public static boolean round() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         System.out.print("Question: ");
         boolean isPrime = true;
@@ -32,7 +55,7 @@ public class Prime {
         } else {
             System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
         }
-        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
+        System.out.println("Let's try again, " + App.getPlayerName() + "!");
         return false;
-    }
+    }*/
 }

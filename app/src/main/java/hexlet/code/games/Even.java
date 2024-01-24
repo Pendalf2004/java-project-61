@@ -1,30 +1,25 @@
 package hexlet.code.games;
-import java.util.Scanner;
-import hexlet.code.Cli;
+import hexlet.code.Engine;
 
 public class Even {
-    public static boolean round() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        System.out.print("Question: ");
-        int maxNum = 99;
-        int a = Math.toIntExact(Math.round(Math.random() * maxNum));
-        System.out.println(a);
-        System.out.print("Your answer: ");
-        Scanner input = new Scanner(System.in);
-        String answer = input.next();
-        if (answer.equalsIgnoreCase("yes") & (a % 2 == 0)) {
-            System.out.println("Correct!");
-            return true;
-        } else if (answer.equalsIgnoreCase("no") & (a % 2 != 0)) {
-            System.out.println("Correct!");
-            return true;
-        }
-        if (answer.equalsIgnoreCase("no")) {
-            System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
+
+    private static String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static String correctAnswer;
+    public static String getTask() {
+        return task;
+    }
+
+    public static String getQuestion() {
+        int question = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
+        if (question % 2 == 0) {
+            correctAnswer = "yes";
         } else {
-            System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
+            correctAnswer = "no";
         }
-        System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
-        return false;
+        return String.valueOf(question);
+    }
+
+    public static String getCorrectAnswer() {
+        return correctAnswer;
     }
 }
