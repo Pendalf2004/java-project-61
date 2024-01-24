@@ -11,7 +11,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        hello();
+//        hello();
         Engine.startGame(sendChosenOpt());
     }
     public static void hello() {
