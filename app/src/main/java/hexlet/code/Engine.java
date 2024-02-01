@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Scanner;
 import hexlet.code.games.Even;
 import hexlet.code.games.MagicCalc;
 import hexlet.code.games.Prime;
@@ -8,133 +7,51 @@ import hexlet.code.games.Progression;
 import hexlet.code.games.GCD;
 
 public class Engine {
-    public static int maxRandomNumber = 50;
+    private static final int MaxRandomNumber = 50;
+    private static String question;
+    private static String answer;
+    private static String task;
     public static int getMaxRandomNumber() {
-        return maxRandomNumber;
+        return MaxRandomNumber;
     }
-    private static String userAnswer;
-    public static String getUserAnswer() {
-        Scanner input = new Scanner(System.in);
-        userAnswer = input.next();
-        return userAnswer;
+    public static String getTask() {
+        return task;
     }
-
-    public static void startGame(int choosenOption) {
-        final int maxRounds = 3;
-        int currentRound = 0;
-
-        switch (choosenOption) {
-            case 1:
-                App.hello();
-                break;
+    public static String getQuestion() {
+        return question;
+    }
+    public static String getAnswer() {
+        return answer;
+    }
+    public static void newRound(int chosenOption) {
+        switch (chosenOption) {
             case 2:
-                App.hello();
-                while (currentRound < maxRounds) {
-                    System.out.println(Even.getTask());
-                    System.out.print("Question: ");
-                    System.out.println(Even.getQuestion());
-                    System.out.print("Your answer: ");
-                    if (Engine.getUserAnswer().equalsIgnoreCase(Even.getCorrectAnswer())) {
-                        System.out.println("Correct!");
-                        currentRound++;
-                        if (currentRound == maxRounds) {
-                            System.out.println("Congratulations, " + App.getPlayerName() + "! ");
-                        }
-                    } else {
-                        System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
-                        System.out.println("Correct answer was '" + Even.getCorrectAnswer() + "'.");
-                        System.out.println("Let's try again, " + App.getPlayerName() + "!");
-                        break;
-                    }
-                }
+                question = Even.getQuestion();
+                task = Even.getTask();
+                answer = Even.getCorrectAnswer();
                 break;
             case 3:
-                App.hello();
-                while (currentRound < maxRounds) {
-                    System.out.println(MagicCalc.getTask());
-                    System.out.print("Question: ");
-                    System.out.println(MagicCalc.getQuestion());
-                    System.out.print("Your answer: ");
-                    if (Engine.getUserAnswer().equalsIgnoreCase(MagicCalc.getCorrectAnswer())) {
-                        System.out.println("Correct!");
-                        currentRound++;
-                        if (currentRound == maxRounds) {
-                            System.out.println("Congratulations, " + App.getPlayerName() + "! ");
-                        }
-                    } else {
-                        System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
-                        System.out.println("Correct answer was '" + MagicCalc.getCorrectAnswer() + "'.");
-                        System.out.println("Let's try again, " + App.getPlayerName() + "!");
-                        break;
-                    }
-                }
+                question = MagicCalc.getQuestion();
+                task = MagicCalc.getTask();
+                answer = MagicCalc.getCorrectAnswer();
                 break;
             case 4:
-                App.hello();
-                while (currentRound < maxRounds) {
-                    System.out.println(GCD.getTask());
-                    System.out.print("Question: ");
-                    System.out.println(GCD.getQuestion());
-                    System.out.print("Your answer: ");
-                    if (Engine.getUserAnswer().equalsIgnoreCase(GCD.getCorrectAnswer())) {
-                        System.out.println("Correct!");
-                        currentRound++;
-                        if (currentRound == maxRounds) {
-                            System.out.println("Congratulations, " + App.getPlayerName() + "! ");
-                        }
-                    } else {
-                        System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
-                        System.out.println("Correct answer was '" + GCD.getCorrectAnswer() + "'.");
-                        System.out.println("Let's try again, " + App.getPlayerName() + "!");
-                        break;
-                    }
-                }
+                question = GCD.getQuestion();
+                task = GCD.getTask();
+                answer = GCD.getCorrectAnswer();
                 break;
             case 5:
-                App.hello();
-                while (currentRound < maxRounds) {
-                    System.out.println(Progression.getTask());
-                    System.out.print("Question: ");
-                    System.out.println(Progression.getQuestion());
-                    System.out.print("Your answer: ");
-                    if (Engine.getUserAnswer().equalsIgnoreCase(Progression.getCorrectAnswer())) {
-                        System.out.println("Correct!");
-                        currentRound++;
-                        if (currentRound == maxRounds) {
-                            System.out.println("Congratulations, " + App.getPlayerName() + "! ");
-                        }
-                    } else {
-                        System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
-                        System.out.println("Correct answer was '" + Progression.getCorrectAnswer() + "'.");
-                        System.out.println("Let's try again, " + App.getPlayerName() + "!");
-                        break;
-                    }
-                }
+                question = Progression.getQuestion();
+                task = Progression.getTask();
+                answer = Progression.getCorrectAnswer();
                 break;
             case 6:
-                App.hello();
-                while (currentRound < maxRounds) {
-                    System.out.println(Prime.getTask());
-                    System.out.print("Question: ");
-                    System.out.println(Prime.getQuestion());
-                    System.out.print("Your answer: ");
-                    if (Engine.getUserAnswer().equalsIgnoreCase(Prime.getCorrectAnswer())) {
-                        System.out.println("Correct!");
-                        currentRound++;
-                        if (currentRound == maxRounds) {
-                            System.out.println("Congratulations, " + App.getPlayerName() + "! ");
-                        }
-                    } else {
-                        System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
-                        System.out.println("Correct answer was '" + Prime.getCorrectAnswer() + "'.");
-                        System.out.println("Let's try again, " + App.getPlayerName() + "!");
-                        break;
-                    }
-                }
+                question = Prime.getQuestion();
+                task = Prime.getTask();
+                answer = Prime.getCorrectAnswer();
                 break;
-            case 0:
-                return;
             default:
+                return;
         }
     }
 }
