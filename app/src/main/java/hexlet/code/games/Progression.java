@@ -2,15 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 public class Progression {
-    private static String task = "What number is missing in the progression?";
+    private static final String TASK = "What number is missing in the progression?";
+    private static int prograssionAddedSteps = 5;
+    private static int progressionMinSteps = 5;
     private static String correctAnswer;
     public static String getTask() {
-        return task;
+        return TASK;
     }
     public static String getQuestion() {
         String result = "";
-        int prograssionAddedSteps = 5;
-        int progressionMinSteps = 5;
         int progrLength = (int) Math.ceil(Math.random() * prograssionAddedSteps + progressionMinSteps);
         int[] progression = new int[progrLength];
         progression[0] = (int) Math.ceil(Math.random() * Engine.getMaxRandomNumber());

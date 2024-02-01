@@ -11,11 +11,11 @@ public class MagicCalc {
     }
 
     public static String getQuestion() {
-        int numOfMathOp = 3;
+        int numOfMathOperations = 3;
         int a = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
         int b = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
         int c = 0;
-        double floor = Math.floor(Math.random() * numOfMathOp);
+        double floor = Math.floor(Math.random() * numOfMathOperations);
         if (floor == 0) {
             correctAnswer = String.valueOf(a + b);
             return  a + " + " + b;
@@ -32,4 +32,4 @@ public class MagicCalc {
     public static String getCorrectAnswer() {
         return correctAnswer;
     }
-    }
+}

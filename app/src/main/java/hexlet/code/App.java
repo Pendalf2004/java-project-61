@@ -4,14 +4,15 @@ import java.util.Scanner;
 
 public class App {
     private static String userAnswer;
-    private static int option;
+    private static int chosenGame;
+    static final int maxRounds = 3;
+    static final int lastRound = 1;
     public static void main(String[] args) {
-        final int maxRounds = 3;
-        option = getGameChose();
-        if (option > 1) {
+        chosenGame = getGameChose();
+        if (chosenGame > 1) {
             Cli.hello();
             rounds(maxRounds);
-        } else if (option == 1) {
+        } else if (chosenGame == 1) {
             Cli.hello();
         }
     }
@@ -33,8 +34,8 @@ public class App {
         return input.nextInt();
     }
     public static void rounds(int currentRound) {
-        Engine.newRound(option);
-        if (currentRound == 3) {
+        Engine.newRound(chosenGame);
+        if (currentRound == maxRounds) {
             System.out.println(Engine.getTask());
         }
         System.out.print("Question: ");
@@ -42,7 +43,7 @@ public class App {
         System.out.print("Your answer: ");
         if (Engine.getAnswer().equalsIgnoreCase(getUserAnswer())) {
             System.out.println("Correct!");
-            if (currentRound == 1) {
+            if (currentRound == lastRound) {
                 System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
                 return;
             }
