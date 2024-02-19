@@ -13,7 +13,7 @@ public class Engine {
     static final int MAX_ROUNDS = 3;
     private static final int MAX_RANDOM_NUMBER = 50;
     private static String userAnswer;
-    private static int chosenGame;
+    private static String chosenGame;
     private static String question;
     private static String answer;
     private static String task;
@@ -55,29 +55,29 @@ public class Engine {
             return;
         }
     }
-    public static void newRound(int chosenOption) {
+    public static void newRound(String chosenOption) {
         switch (chosenOption) {
-            case 2:
+            case "2":
                 question = Even.getQuestion();
                 task = Even.getTask();
                 answer = Even.getCorrectAnswer();
                 break;
-            case 3:
+            case "3":
                 question = MagicCalc.getQuestion();
                 task = MagicCalc.getTask();
                 answer = MagicCalc.getCorrectAnswer();
                 break;
-            case 4:
+            case "4":
                 question = GCD.getQuestion();
                 task = GCD.getTask();
                 answer = GCD.getCorrectAnswer();
                 break;
-            case 5:
+            case "5":
                 question = Progression.getQuestion();
                 task = Progression.getTask();
                 answer = Progression.getCorrectAnswer();
                 break;
-            case 6:
+            case "6":
                 question = Prime.getQuestion();
                 task = Prime.getTask();
                 answer = Prime.getCorrectAnswer();
@@ -86,10 +86,10 @@ public class Engine {
                 return;
         }
     }
-    public static void setChosenGame(int game) {
+    public static void setChosenGame(String game) {
         chosenGame = game;
     }
-    public static int getChosenGame() {
+    public static String getChosenGame() {
         return chosenGame;
     }
     public static String getUserAnswer() {

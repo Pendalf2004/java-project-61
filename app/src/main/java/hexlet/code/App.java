@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Engine.setChosenGame(getGameChose());
-        if (Engine.getChosenGame() > 1) {
+        if (Engine.getChosenGame().equals("1")) {
+            Cli.hello();
+        } else if (!Engine.getChosenGame().equals("0")) {
             Cli.hello();
             Engine.rounds();
-        } else if (Engine.getChosenGame() == 1) {
-            Cli.hello();
         }
     }
-    public static int getGameChose() {
+    public static String getGameChose() {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -22,7 +22,7 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         Scanner gameChoseInput = new Scanner(System.in);
-        var answer = gameChoseInput.nextInt();
+        var answer = gameChoseInput.next();
         //gameChoseInput.close();
         return answer;
     }

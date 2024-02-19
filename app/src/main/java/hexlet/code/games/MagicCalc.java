@@ -9,13 +9,12 @@ public class MagicCalc {
     public static String getTask() {
         return task;
     }
-
+    public static final int RNDM_MATH_OPERATION = 3;
     public static String getQuestion() {
-        int numOfMathOperations = 3;
         int a = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
         int b = Math.toIntExact(Math.round(Math.random() * Engine.getMaxRandomNumber()));
-        int c = 0;
-        double floor = Math.floor(Math.random() * numOfMathOperations);
+        //int c = 0;
+        double floor = Math.floor(Math.random() * RNDM_MATH_OPERATION);
         if (floor == 0) {
             correctAnswer = String.valueOf(a + b);
             return  a + " + " + b;
