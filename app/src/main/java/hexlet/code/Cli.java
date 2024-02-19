@@ -9,10 +9,10 @@ public class Cli {
         return playerName;
     }
     public static void hello() {
-        Scanner input = new Scanner(System.in);
+        Scanner nameInput = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        playerName = input.next();
+        playerName = nameInput.next();
         System.out.println("Hello, " + playerName + "!");
     }
 }
