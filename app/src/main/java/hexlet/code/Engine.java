@@ -44,14 +44,14 @@ public class Engine {
         if (Engine.getAnswer().equalsIgnoreCase(getUserAnswer())) {
             System.out.println("Correct!");
             if (currentRound == LAST_ROUND) {
-                System.out.println("Congratulations, " + Cli.getPlayerName() + "! ");
+                System.out.println("Congratulations, " + App.getPlayerName() + "! ");
                 return;
             }
             rounds(currentRound - 1);
         } else {
             System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
             System.out.println("Correct answer was '" + Engine.getAnswer() + "'.");
-            System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
+            System.out.println("Let's try again, " + App.getPlayerName() + "!");
             return;
         }
     }
