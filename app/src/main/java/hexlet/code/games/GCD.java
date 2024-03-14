@@ -22,7 +22,7 @@ public class GCD {
                 currentRound -= 1;
             }
             if (correctlyAnswered && (currentRound < LAST_ROUND)) {
-                System.out.println("Congratulations,  " + Engine.getPlayerName() + "!");
+                System.out.println("Congratulations, " + Engine.getPlayerName() + "!");
             }
         }
     }
