@@ -9,7 +9,7 @@ public class MagicCalc {
     private static final int LAST_ROUND = 1;
     private static int currentRound = MAX_ROUNDS;
     private static String correctAnswer;
-    public static final int RNDM_MATH_OPERATION = 3;
+    public static final int RNDM_MATH_OPERATION = 2;
 
     public static void startGame() {
         var correctlyAnswered = true;
@@ -31,6 +31,7 @@ public class MagicCalc {
         int a = Utils.getRndNum();
         int b = Utils.getRndNum();
         var mathOperation = Utils.getRndNum(RNDM_MATH_OPERATION);
+        System.out.println("Rndm mah - " + mathOperation);
         if (mathOperation == 0) {
             correctAnswer = String.valueOf(a + b);
             return a + " + " + b;
