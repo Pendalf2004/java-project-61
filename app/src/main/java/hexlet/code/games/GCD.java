@@ -7,11 +7,11 @@ public class GCD {
     private static final int MIN_RANDOM_NUM = 1;
     private static final String TASK = "Find the greatest common divisor of given numbers.";
     private static String correctAnswer;
+    private static final int NUMBER_OF_TASKS = 3;
 
     public static void startGame() {
-        int numberOfTasks = 3;
-        String[] questions = new String[numberOfTasks];
-        String[] answers = new String[numberOfTasks];
+        String[] questions = new String[NUMBER_OF_TASKS];
+        String[] answers = new String[NUMBER_OF_TASKS];
         for (int i = 0; i <= 2; i++) {
             questions[i] = getQuestion();
             answers[i] = correctAnswer;

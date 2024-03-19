@@ -8,11 +8,11 @@ public class Progression {
     private static final int MIN_PRGRS_LENGTH = 5;
     private static final int MIN_PROGRESSION_STEP = 1;
     private static final int MAX_PROGRESSION_STEP = 20;
+    private static final int NUMBER_OF_TASKS = 3;
     private static String correctAnswer;
     public static void startGame() {
-        int numberOfTasks = 3;
-        String[] questions = new String[numberOfTasks];
-        String[] answers = new String[numberOfTasks];
+        String[] questions = new String[NUMBER_OF_TASKS];
+        String[] answers = new String[NUMBER_OF_TASKS];
         for (int i = 0; i <= 2; i++) {
             questions[i] = getQuestion();
             answers[i] = correctAnswer;

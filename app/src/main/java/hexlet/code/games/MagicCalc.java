@@ -6,12 +6,12 @@ public class MagicCalc {
 
     private static final String TASK = "What is the result of the expression?";
     private static String correctAnswer;
-    public static final int RNDM_MATH_OPERATION = 2;
+    private static final int RNDM_MATH_OPERATION = 2;
+    private static final int NUMBER_OF_TASKS = 3;
 
     public static void startGame() {
-        int numberOfTasks = 3;
-        String[] questions = new String[numberOfTasks];
-        String[] answers = new String[numberOfTasks];
+        String[] questions = new String[NUMBER_OF_TASKS];
+        String[] answers = new String[NUMBER_OF_TASKS];
         for (int i = 0; i <= 2; i++) {
             questions[i] = getQuestion();
             answers[i] = correctAnswer;
