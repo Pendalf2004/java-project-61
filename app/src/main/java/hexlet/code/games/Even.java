@@ -6,8 +6,9 @@ public class Even {
     private static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static String correctAnswer;
     public static void startGame() {
-        String[] questions = new String[3];
-        String[] answers = new String[3];
+        int numberOfTasks = 3;
+        String[] questions = new String[numberOfTasks];
+        String[] answers = new String[numberOfTasks];
         for (int i = 0; i <= 2; i++) {
             questions[i] = getQuestion();
             answers[i] = correctAnswer;

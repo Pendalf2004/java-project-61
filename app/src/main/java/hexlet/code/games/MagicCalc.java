@@ -9,8 +9,9 @@ public class MagicCalc {
     public static final int RNDM_MATH_OPERATION = 2;
 
     public static void startGame() {
-        String[] questions = new String[3];
-        String[] answers = new String[3];
+        int numberOfTasks = 3;
+        String[] questions = new String[numberOfTasks];
+        String[] answers = new String[numberOfTasks];
         for (int i = 0; i <= 2; i++) {
             questions[i] = getQuestion();
             answers[i] = correctAnswer;
