@@ -3,30 +3,21 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class Prime {
     private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static final int NUMBER_OF_TASKS = 3;
-    private static String correctAnswer;
     public static void startGame() {
-        String[] questions = new String[NUMBER_OF_TASKS];
-        String[] answers = new String[NUMBER_OF_TASKS];
-        for (int i = 0; i <= 2; i++) {
-            questions[i] = getQuestion();
-            answers[i] = correctAnswer;
+        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
+        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+            tasks[i][0] = String.valueOf(Utils.getRndNum());
+            tasks[i][1] = isPrime(Integer.parseInt(tasks[i][0])) ? "yes" : "no";
         }
-        Engine.game(TASK, questions, answers);
+        Engine.game(TASK, tasks);
     }
-    public static String getQuestion() {
+    public static boolean isPrime(int a) {
         boolean isPrime = true;
-        var a = Utils.getRndNum();
         for (int i = 2; i < a; i++) {
             if (a % i == 0) {
                 isPrime = false;
             }
         }
-        if (isPrime) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
-        }
-        return String.valueOf(a);
+        return isPrime;
     }
 }

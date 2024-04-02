@@ -10,7 +10,7 @@ public class App {
         var chosenOption = getGameChose();
         switch (chosenOption) {
             case "1":
-                Cli.hello();
+                Cli.getPlayerName();
                 break;
             case "2":
                 Even.startGame();

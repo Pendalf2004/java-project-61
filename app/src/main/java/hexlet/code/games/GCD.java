@@ -6,22 +6,19 @@ public class GCD {
     private static final int MAX_RANDOM_NUM = 50;
     private static final int MIN_RANDOM_NUM = 1;
     private static final String TASK = "Find the greatest common divisor of given numbers.";
-    private static String correctAnswer;
-    private static final int NUMBER_OF_TASKS = 3;
-
     public static void startGame() {
-        String[] questions = new String[NUMBER_OF_TASKS];
-        String[] answers = new String[NUMBER_OF_TASKS];
-        for (int i = 0; i <= 2; i++) {
-            questions[i] = getQuestion();
-            answers[i] = correctAnswer;
+        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
+        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+            tasks[i][0] = getQuestion();
+            var firstNum = Integer.parseInt(tasks[i][0].substring(0, tasks[i][0].indexOf(' ')));
+            var secondNum = Integer.parseInt(tasks[i][0].substring(tasks[i][0].indexOf(' ') + 1));
+            tasks[i][1] = String.valueOf(gcd(firstNum, secondNum));
         }
-        Engine.game(TASK, questions, answers);
+        Engine.game(TASK, tasks);
     }
     public static String getQuestion() {
         int a = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
         int b = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
-        correctAnswer = String.valueOf(gcd(a, b));
         return a + " " + b;
     }
 

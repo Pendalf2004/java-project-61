@@ -4,24 +4,19 @@ import hexlet.code.Utils;
 
 public class Even {
     private static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    private static String correctAnswer;
-    private static final int NUMBER_OF_TASKS = 3;
     public static void startGame() {
-        String[] questions = new String[NUMBER_OF_TASKS];
-        String[] answers = new String[NUMBER_OF_TASKS];
-        for (int i = 0; i <= 2; i++) {
-            questions[i] = getQuestion();
-            answers[i] = correctAnswer;
+        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
+        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+            tasks[i][0] = getQuestion();
+            tasks[i][1] = isEven(tasks[i][0]) ? "yes" :  "no";
         }
-        Engine.game(TASK, questions, answers);
+        Engine.game(TASK, tasks);
     }
     public static String getQuestion() {
         int question = Utils.getRndNum();
-        if (question % 2 == 0) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
-        }
         return String.valueOf(question);
+    }
+    public static boolean isEven(String question) {
+        return Integer.parseInt(question) % 2 == 0;
     }
 }

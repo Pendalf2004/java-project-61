@@ -7,16 +7,13 @@ public class MagicCalc {
     private static final String TASK = "What is the result of the expression?";
     private static String correctAnswer;
     private static final int RNDM_MATH_OPERATION = 2;
-    private static final int NUMBER_OF_TASKS = 3;
-
     public static void startGame() {
-        String[] questions = new String[NUMBER_OF_TASKS];
-        String[] answers = new String[NUMBER_OF_TASKS];
-        for (int i = 0; i <= 2; i++) {
-            questions[i] = getQuestion();
-            answers[i] = correctAnswer;
+        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
+        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+            tasks[i][0] = getQuestion();
+            tasks[i][1] = correctAnswer;
         }
-        Engine.game(TASK, questions, answers);
+        Engine.game(TASK, tasks);
     }
     public static String getQuestion() {
         int a = Utils.getRndNum();
