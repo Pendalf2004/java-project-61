@@ -5,32 +5,20 @@ import hexlet.code.Utils;
 public class GCD {
     private static final int MAX_RANDOM_NUM = 50;
     private static final int MIN_RANDOM_NUM = 1;
-    private static final int MAX_ROUNDS = 3;
-    private static final int LAST_ROUND = 1;
-    private static int currentRound = MAX_ROUNDS;
     private static final String TASK = "Find the greatest common divisor of given numbers.";
-    private static String correctAnswer;
-
     public static void startGame() {
-        var correctlyAnswered = true;
-        while (correctlyAnswered && currentRound >= LAST_ROUND) {
-            if (currentRound == MAX_ROUNDS) {
-                correctlyAnswered = Engine.newRound(TASK, getQuestion(), correctAnswer, "Correct!");
-                currentRound -= 1;
-            } else {
-                correctlyAnswered = Engine.newRound(getQuestion(), correctAnswer, "Correct!");
-                currentRound -= 1;
-            }
-            if (correctlyAnswered && (currentRound < LAST_ROUND)) {
-                System.out.println("Congratulations, " + Engine.getPlayerName() + "!");
-            }
+        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
+        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+            tasks[i][0] = getQuestion();
+            var firstNum = Integer.parseInt(tasks[i][0].substring(0, tasks[i][0].indexOf(' ')));
+            var secondNum = Integer.parseInt(tasks[i][0].substring(tasks[i][0].indexOf(' ') + 1));
+            tasks[i][1] = String.valueOf(gcd(firstNum, secondNum));
         }
+        Engine.game(TASK, tasks);
     }
-
     public static String getQuestion() {
         int a = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
         int b = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
-        correctAnswer = String.valueOf(gcd(a, b));
         return a + " " + b;
     }
 
