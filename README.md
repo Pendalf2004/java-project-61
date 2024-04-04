@@ -37,7 +37,7 @@ make run-dist
 [![asciicast](https://asciinema.org/a/Ir33lbAz8RnOgkQbM8EU5sElU.svg)](https://asciinema.org/a/Ir33lbAz8RnOgkQbM8EU5sElU)
 
 ### GSD game Demo
-# Find the greatest common diviser
+#### Find the greatest common diviser
 [![asciicast](https://asciinema.org/a/E8GLCpDKAwimKjr7e1CEsleW8.svg)](https://asciinema.org/a/E8GLCpDKAwimKjr7e1CEsleW8)
 
 ### Progression game Demo
