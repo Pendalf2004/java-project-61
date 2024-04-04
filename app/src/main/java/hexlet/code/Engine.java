@@ -7,9 +7,12 @@ public class Engine {
     private static final int MAX_ROUNDS = 0;
     private static final int LAST_ROUND = 2;
     private static String playerName;
-    private static String userAnswer;
     public static void game(String task, String[][] tasks) {
-        playerName = Cli.getPlayerName();
+        Scanner nameInput = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        playerName = nameInput.next();
+        System.out.println("Hello, " + playerName + "!");
         System.out.println(task);
         var currentRound = MAX_ROUNDS;
         var correctlyAnswered = true;
@@ -26,7 +29,9 @@ public class Engine {
     public static boolean newRound(String question, String correctAnswer, String corrAnswerMsg) {
         System.out.println("Question: " + question);
         System.out.print("Your answer: ");
-        if (!getUserAnswer().equalsIgnoreCase(correctAnswer)) {
+        Scanner answerInput = new Scanner(System.in);
+        var userAnswer = answerInput.next();
+        if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
             System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
             System.out.println("Correct answer was '" + correctAnswer + "'.");
             System.out.println("Let's try again, " + playerName + "!");
@@ -34,12 +39,6 @@ public class Engine {
         }
         System.out.println(corrAnswerMsg);
         return true;
-    }
-    public static String getUserAnswer() {
-        Scanner answerInput = new Scanner(System.in);
-        userAnswer = answerInput.next();
-        //answerInput.close();
-        return userAnswer;
     }
     public static int getNumberOfTasks() {
         return NUMBER_OF_TASKS;

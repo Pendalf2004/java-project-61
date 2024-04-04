@@ -9,19 +9,13 @@ public class GCD {
     public static void startGame() {
         String[][] tasks = new String[Engine.getNumberOfTasks()][2];
         for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
-            tasks[i][0] = getQuestion();
-            var firstNum = Integer.parseInt(tasks[i][0].substring(0, tasks[i][0].indexOf(' ')));
-            var secondNum = Integer.parseInt(tasks[i][0].substring(tasks[i][0].indexOf(' ') + 1));
+            int firstNum = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
+            int secondNum = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
+            tasks[i][0] = firstNum + " " + secondNum;
             tasks[i][1] = String.valueOf(gcd(firstNum, secondNum));
         }
         Engine.game(TASK, tasks);
     }
-    public static String getQuestion() {
-        int a = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
-        int b = Utils.getRndNum(MIN_RANDOM_NUM, MAX_RANDOM_NUM);
-        return a + " " + b;
-    }
-
     private static int gcd(int a, int b) {
         for (int i = Math.min(a, b); i > 0; i--) {
             if ((a % i == 0) & (b % i == 0)) {
