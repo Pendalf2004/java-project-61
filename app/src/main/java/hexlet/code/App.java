@@ -10,7 +10,11 @@ public class App {
         var chosenOption = getGameChose();
         switch (chosenOption) {
             case "1":
-                Cli.getPlayerName();
+                Scanner nameInput = new Scanner(System.in);
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                var playerName = nameInput.next();
+                System.out.println("Hello, " + playerName + "!");
                 break;
             case "2":
                 Even.startGame();
@@ -28,6 +32,7 @@ public class App {
                 Prime.startGame();
                 break;
             default:
+                System.out.println("Please make a valid chose next time.");
                 return;
         }
         Scanner closingSystemIn = new Scanner(System.in);
