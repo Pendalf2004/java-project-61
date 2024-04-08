@@ -10,7 +10,7 @@
 ---
 
 ## This project was created to utilize some basic coding.
-It  consist of several games:
+It  consist of several games: 
 - Even
 - Calculator
 - Progression
