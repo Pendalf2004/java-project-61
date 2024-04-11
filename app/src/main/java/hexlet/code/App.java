@@ -7,14 +7,19 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
-        var chosenOption = getGameChose();
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
+        System.out.println("0 - Exit");
+        Scanner gameChoseInput = new Scanner(System.in);
+        var chosenOption = gameChoseInput.next();
         switch (chosenOption) {
             case "1":
-                Scanner nameInput = new Scanner(System.in);
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                var playerName = nameInput.next();
-                System.out.println("Hello, " + playerName + "!");
+                var tmpVar = Cli.playerGreeting();
                 break;
             case "2":
                 Even.startGame();
@@ -37,17 +42,5 @@ public class App {
         }
         Scanner closingSystemIn = new Scanner(System.in);
         closingSystemIn.close();
-    }
-    public static String getGameChose() {
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("3 - Calc");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
-        System.out.println("0 - Exit");
-        Scanner gameChoseInput = new Scanner(System.in);
-        return gameChoseInput.next();
     }
 }

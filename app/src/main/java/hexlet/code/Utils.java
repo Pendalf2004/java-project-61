@@ -1,7 +1,7 @@
 package hexlet.code;
 
 public class Utils {
-    private static final int DEFAULT_MAX_NUM = 50;
+    private static final int DEFAULT_MAX_NUM = 100;
     public static int getRndNum(int min, int max) {
         return min + Math.toIntExact(Math.round(Math.random() * (max - min)));
     }
