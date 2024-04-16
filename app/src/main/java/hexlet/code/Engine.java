@@ -6,7 +6,7 @@ public class Engine {
     private static final int NUMBER_OF_TASKS = 3;
     private static final int FIRST_ROUND_INDEX = 0;
     public static void game(String task, String[][] tasks) {
-        var playerName = Cli.playerGreeting();
+        var playerName = playerGreeting();
         System.out.println(task);
         var numberOfTasks = tasks.length - 1;
         var currentRound = FIRST_ROUND_INDEX;
@@ -32,5 +32,13 @@ public class Engine {
     }
     public static int getNumberOfTasks() {
         return NUMBER_OF_TASKS;
+    }
+    private static String playerGreeting() {
+        Scanner nameInput = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        var playerName = nameInput.next();
+        System.out.println("Hello, " + playerName + "!");
+        return playerName;
     }
 }

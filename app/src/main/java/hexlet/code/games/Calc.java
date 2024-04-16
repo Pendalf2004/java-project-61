@@ -2,7 +2,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public class MagicCalc {
+public class Calc {
 
     private static final String TASK = "What is the result of the expression?";
     private static final int RNDM_MATH_OPERATION = 2;

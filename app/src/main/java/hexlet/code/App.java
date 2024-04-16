@@ -1,6 +1,6 @@
 package hexlet.code;
 import hexlet.code.games.Even;
-import hexlet.code.games.MagicCalc;
+import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
@@ -19,13 +19,13 @@ public class App {
         var chosenOption = gameChoseInput.next();
         switch (chosenOption) {
             case "1":
-                var tmpVar = Cli.playerGreeting();
+                Cli.playerGreeting();
                 break;
             case "2":
                 Even.startGame();
                 break;
             case "3":
-                MagicCalc.startGame();
+                Calc.startGame();
                 break;
             case "4":
                 GCD.startGame();
