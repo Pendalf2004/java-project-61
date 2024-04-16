@@ -7,13 +7,13 @@ public class Even {
     public static void startGame() {
         String[][] tasks = new String[Engine.getNumberOfTasks()][2];
         for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
-            tasks[i][0] = getQuestion();
-            tasks[i][1] = (Integer.parseInt(tasks[i][0]) % 2 == 0) ? "yes" :  "no";
+            var question = Utils.getRndNum();
+            tasks[i][0] = String.valueOf(question);
+            tasks[i][1] = isEven(question) ? "yes" :  "no";
         }
         Engine.game(TASK, tasks);
     }
-    public static String getQuestion() {
-        int question = Utils.getRndNum();
-        return String.valueOf(question);
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
     }
 }

@@ -1,7 +1,7 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-
 import java.util.Arrays;
 
 public class Progression {
@@ -13,7 +13,10 @@ public class Progression {
     public static void startGame() {
         String[][] tasks = new String[Engine.getNumberOfTasks()][2];
         for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
-            int[] progression = getProgression();
+            int lengthOfProgression = Utils.getRndNum(MIN_PRGRS_LENGTH, MAX_PRGRS_ADDED_STEPS + MIN_PRGRS_LENGTH);
+            int firstProgrElement = Utils.getRndNum();
+            int progrStep = Utils.getRndNum(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP);
+            int[] progression = getProgression(lengthOfProgression, firstProgrElement, progrStep);
             int absElem = (int) Math.floor(Math.random() * (progression.length - 1));
             tasks[i][1] = String.valueOf(progression[absElem]);
             progression[absElem] = -1;
@@ -21,11 +24,9 @@ public class Progression {
         }
         Engine.game(TASK, tasks);
     }
-    public static int[] getProgression() {
-        int progrLength = Utils.getRndNum(MIN_PRGRS_LENGTH, MAX_PRGRS_ADDED_STEPS + MIN_PRGRS_LENGTH);
+    public static int[] getProgression(int progrLength, int firstElement, int step) {
         int[] progression = new int[progrLength];
-        progression[0] = Utils.getRndNum();
-        int step = Utils.getRndNum(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP);
+        progression[0] = firstElement;
         for (int i = 1; i < progrLength; i++) {
             progression[i] = progression[i - 1] + step;
         }

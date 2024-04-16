@@ -13,16 +13,24 @@ public class Calc {
             int b = Utils.getRndNum();
             var mathOperation = Utils.getRndNum(RNDM_MATH_OPERATION);
             if (mathOperation == 0) {
-                tasks[i][1] = String.valueOf(a + b);
+                tasks[i][1] = String.valueOf(calculate(a, b, mathOperation));
                 tasks[i][0] = a + " + " + b;
             } else if (mathOperation == 1) {
-                tasks[i][1] = String.valueOf(a - b);
+                tasks[i][1] = String.valueOf(calculate(a, b, mathOperation));
                 tasks[i][0] = a + " - " + b;
             } else if (mathOperation == 2) {
-                tasks[i][1] = String.valueOf(a * b);
+                tasks[i][1] = String.valueOf(calculate(a, b, mathOperation));
                 tasks[i][0] = a + " * " + b;
             }
         }
         Engine.game(TASK, tasks);
+    }
+    public static int calculate(int a, int b, int operatr) {
+        int result;
+        if (operatr == 0) {
+            return a + b;
+        }
+        result = operatr == 1 ? a - b : a * b;
+        return result;
     }
 }
