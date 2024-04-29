@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int NUMBER_OF_TASKS = 3;
+    private static final int TASK_ARRAY_MAX_INDEX = 3;
     private static final int FIRST_ROUND_INDEX = 0;
     public static void game(String task, String[][] tasks) {
         Scanner nameInput = new Scanner(System.in);
@@ -12,8 +12,7 @@ public class Engine {
         var playerName = nameInput.next();
         System.out.println("Hello, " + playerName + "!");
         System.out.println(task);
-        var numberOfTasks = tasks.length - 1;
-        for (int currentRound = FIRST_ROUND_INDEX; currentRound <= numberOfTasks; currentRound++) {
+        for (int currentRound = FIRST_ROUND_INDEX; currentRound <= TASK_ARRAY_MAX_INDEX - 1; currentRound++) {
             var question = tasks[currentRound][0];
             var answer = tasks[currentRound][1];
             System.out.println("Question: " + question);
@@ -26,14 +25,13 @@ public class Engine {
                 System.out.println("Let's try again, " + playerName + "!");
                 return;
             }
-            currentRound += 1;
             System.out.println("Correct!");
-            if (currentRound > numberOfTasks) {
+            if (currentRound == TASK_ARRAY_MAX_INDEX - 1) {
                 System.out.println("Congratulations, " + playerName + "!");
             }
         }
     }
-    public static int getNumberOfTasks() {
-        return NUMBER_OF_TASKS;
+    public static int getTaskArrayMaxIndex() {
+        return TASK_ARRAY_MAX_INDEX;
     }
 }

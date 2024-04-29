@@ -11,8 +11,8 @@ public class Progression {
     private static final int MIN_PROGRESSION_STEP = 1;
     private static final int MAX_PROGRESSION_STEP = 20;
     public static void startGame() {
-        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
-        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+        String[][] tasks = new String[Engine.getTaskArrayMaxIndex()][2];
+        for (int i = 0; i < Engine.getTaskArrayMaxIndex(); i++) {
             int lengthOfProgression = Utils.getRndNum(MIN_PRGRS_LENGTH, MAX_PRGRS_ADDED_STEPS + MIN_PRGRS_LENGTH);
             int firstProgrElement = Utils.getRndNum();
             int progrStep = Utils.getRndNum(MIN_PROGRESSION_STEP, MAX_PROGRESSION_STEP);

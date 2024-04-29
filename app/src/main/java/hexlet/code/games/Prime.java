@@ -4,8 +4,8 @@ import hexlet.code.Utils;
 public class Prime {
     private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static void startGame() {
-        String[][] tasks = new String[Engine.getNumberOfTasks()][2];
-        for (int i = 0; i < Engine.getNumberOfTasks(); i++) {
+        String[][] tasks = new String[Engine.getTaskArrayMaxIndex()][2];
+        for (int i = 0; i < Engine.getTaskArrayMaxIndex(); i++) {
             tasks[i][0] = String.valueOf(Utils.getRndNum());
             tasks[i][1] = isPrime(Integer.parseInt(tasks[i][0])) ? "yes" : "no";
         }
