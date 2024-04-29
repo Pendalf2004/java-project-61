@@ -12,6 +12,9 @@ public class Prime {
         Engine.game(TASK, tasks);
     }
     public static boolean isPrime(int a) {
+        if (a < 2) {
+            return false;
+        }
         boolean isPrime = true;
         for (int i = 2; i < a; i++) {
             if (a % i == 0) {

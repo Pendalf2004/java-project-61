@@ -13,8 +13,7 @@ public class Engine {
         System.out.println("Hello, " + playerName + "!");
         System.out.println(task);
         var numberOfTasks = tasks.length - 1;
-        var currentRound = FIRST_ROUND_INDEX;
-        while (currentRound <= numberOfTasks) {
+        for (int currentRound = FIRST_ROUND_INDEX; currentRound <= numberOfTasks; currentRound++) {
             var question = tasks[currentRound][0];
             var answer = tasks[currentRound][1];
             System.out.println("Question: " + question);

@@ -17,6 +17,7 @@ public class App {
         System.out.println("0 - Exit");
         Scanner gameChoseInput = new Scanner(System.in);
         var chosenOption = gameChoseInput.next();
+        //gameChoseInput.close();
         switch (chosenOption) {
             case "1":
                 Cli.playerGreeting();
