@@ -26,6 +26,7 @@ public class Calc {
                 tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
                 tasks[i][0] = a + " * " + b;
                 break;
+                default:
             }
         }
         Engine.game(TASK, tasks);
