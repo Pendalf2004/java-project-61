@@ -11,26 +11,32 @@ public class Calc {
         for (int i = 0; i < Engine.getTaskArrayMaxIndex(); i++) {
             int a = Utils.getRndNum();
             int b = Utils.getRndNum();
+            char[] mathOperations = new char[]{'+', '-', '*'};
             var mathOperation = Utils.getRndNum(RNDM_MATH_OPERATION);
-            if (mathOperation == 0) {
-                tasks[i][1] = String.valueOf(calculate(a, b, mathOperation));
+            switch (mathOperations[mathOperation]) {
+                case '+':
+                tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
                 tasks[i][0] = a + " + " + b;
-            } else if (mathOperation == 1) {
-                tasks[i][1] = String.valueOf(calculate(a, b, mathOperation));
+                break;
+                case '-':
+                tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
                 tasks[i][0] = a + " - " + b;
-            } else if (mathOperation == 2) {
-                tasks[i][1] = String.valueOf(calculate(a, b, mathOperation));
+                break;
+                case '*':
+                tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
                 tasks[i][0] = a + " * " + b;
+                break;
             }
         }
         Engine.game(TASK, tasks);
     }
-    public static int calculate(int a, int b, int operatr) {
+
+    public static int calculate(int a, int b, char operatr) {
         int result;
-        if (operatr == 0) {
+        if (operatr == '+') {
             return a + b;
         }
-        result = operatr == 1 ? a - b : a * b;
+        result = operatr == '-' ? a - b : a * b;
         return result;
     }
 }
