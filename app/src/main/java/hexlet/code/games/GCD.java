@@ -19,8 +19,7 @@ public class GCD {
     private static int gcd(int a, int b) {
         if (Math.min(a, b) != 0) {
             return gcd(Math.min(a, b), Math.max(a, b) % Math.min(a, b));
-        }
-        else {
+        } else {
             return Math.max(a, b);
         }
     }
