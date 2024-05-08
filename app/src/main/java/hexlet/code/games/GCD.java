@@ -17,11 +17,9 @@ public class GCD {
         Engine.game(TASK, tasks);
     }
     private static int gcd(int a, int b) {
-        for (int i = Math.min(a, b); i > 0; i--) {
-            if ((a % i == 0) & (b % i == 0)) {
-                return i;
-            }
-        }
-        return 1;
+        if (Math.min(a ,b) != 0)
+            return gcd(Math.min(a ,b), Math.max(a, b) % Math.min(a ,b));
+        else
+            return Math.max(a, b);
     }
 }

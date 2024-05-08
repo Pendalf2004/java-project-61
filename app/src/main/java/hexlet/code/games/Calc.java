@@ -13,31 +13,18 @@ public class Calc {
             int b = Utils.getRndNum();
             char[] mathOperations = new char[]{'+', '-', '*'};
             var mathOperation = Utils.getRndNum(RNDM_MATH_OPERATION);
-            switch (mathOperations[mathOperation]) {
-                case '+':
-                tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
-                tasks[i][0] = a + " + " + b;
-                break;
-                case '-':
-                tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
-                tasks[i][0] = a + " - " + b;
-                break;
-                case '*':
-                tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
-                tasks[i][0] = a + " * " + b;
-                break;
-                default:
-            }
+            tasks[i][1] = String.valueOf(calculate(a, b, mathOperations[mathOperation]));
+            tasks[i][0] = a + " " + mathOperations[mathOperation] + " " + b;
         }
         Engine.game(TASK, tasks);
     }
 
     public static int calculate(int a, int b, char operatr) {
-        int result;
-        if (operatr == '+') {
-            return a + b;
-        }
-        result = operatr == '-' ? a - b : a * b;
-        return result;
+        return switch (operatr) {
+            case '+' -> a + b;
+            case '-' -> a - b;
+            case '*' -> a * b;
+            default -> 0;
+        };
     }
 }
